@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+
+	<link href="css/animate.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app="myApp">
+    <div ng-controller="postsController">
+
+	  <main-menu wanted="wanted"></main-menu>
+	  
+	  <collapse-box>
+		<post-input></post-input>
+	  </collapse-box>
+	  
+	  <go-up></go-up>
+
+
+	  <div class="container post-holder">
+		<div class="main-btn-holder">
+
+		  <!-- back to main page -->
+		  <button class="btn btn-foo">back <span class="glyphicon glyphicon-arrow-left"></span></button>
+
+		  <!-- toggle topics list modal -->
+		  <button class="btn btn-foo-light"
+			data-toggle="modal"
+			data-target="#topics-list">topics <span class="glyphicon glyphicon-filter"></span></button>
+
+		  <!-- toggle tops list modal -->
+		  <button class="btn btn-danger"
+			data-toggle="popover"
+			data-content="here goes my content">tops <span class="glyphicon glyphicon-stats"></span></button>
+
+		</div>
+
+		<alert-lg id="mymodal">
+		  <post-input></post-input>
+		</alert-lg>
+
+		<!--- topics list modal -->
+		<alert-lg id="topics-list" data-title="topics">
+		  <ul ng-init="topics=['action', 'adventure', 'romance', 'comedy']">
+			<li ng-repeat="topic in topics">
+			  <input class="form-control" type="checkbox"/> <p>{{ topic }} #</p>
+			</li>
+		  </ul>
+		</alert-lg>
+		<!-- /.topics list modal -->
+
+		<!-- picture modal -->
+		<alert-lg id="pic-modal" data-title="pictures">
+		  <process>
+		    <pic-modal></pic-modal>
+		  </process>
+		</alert-lg>
+		<!-- /.picture modal -->
+
+
+		<div ng-repeat="post in posts | filter: {name: wanted}" class="media mypost">
+		  <a href="">
+			<img ng-src="{{post.img}}" class="media-object pull-left"/>
+			<h4 ng-bind="post.name" class="media-heading"></h4>
+		  </a>
+		  <div class="post-detail-holder">
+			<p ng-bind="post.date"></p>
+			<p ng-bind="post.topic"></p>
+		  </div>
+
+		  <p class="detail"><span ng-bind="post.friends"></span> friends</p>
+
+		  <div class="media-body">
+			<p ng-bind="post.body"></p>
+		  </div>
+		  <div class="media-footer">
+			<button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span><span ng-bind="post.views"></span></button>
+			<button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span><span ng-bind="post.likes"></span></button>
+			<button class="btn btn-default"><span class="glyphicon glyphicon-comment"></span><span ng-bind="post.comm"></span></button>
+			<button class="btn btn-default">...</button>
+		  </div>
+		</div>
+	  </div>
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/angular.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/scripts.js"></script>
+  </body>
+</html>

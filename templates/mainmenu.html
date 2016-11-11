@@ -1,0 +1,30 @@
+<nav class="main-menu nav nav-pills">
+
+  <!-- logo -->
+  <li ng-show="visible" class="menu-holder fadeInDown animated">
+	<a href="">
+	  <span class="glyphicon glyphicon-pushpin"></span> 
+	  postland
+	</a>
+	<!-- search btn -->
+	<button ng-click="toggleBar(false)" class="search-btn btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+  </li>
+
+  <!-- search holder -->
+  <li ng-show="!visible" class="search-holder fadeInDown animated">
+	<span class="input-group">
+	  <input ng-model="wanted" type="text" class="form-control" placeholder="search"/>
+	  <span class="input-group-btn">
+		<button ng-click="toggleBar(true)" class="btn btn-danger">
+		  <span class="glyphicon glyphicon-remove"></span>
+		</button>
+	  </span>
+	</span>
+
+	<!-- toggle filter modal -->
+	<button class="btn btn-danger">
+	  <span class="glyphicon glyphicon-cog"></span>
+	</button>
+  </li>
+</nav>
+
