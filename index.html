@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=2">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="post system">
+    <meta name="author" content="leonardoficial@hotmail.com">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>postland</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,15 +25,22 @@
   </head>
 
   <body ng-app="myApp">
+	<!-- -->
+	<div class="loading-page">
+	  <img src="css/imgs/icon-load-center.gif"/>
+	  <p>loading</p>
+	</div>
+	
+	
+	<go-up></go-up>
+	
     <div ng-controller="postsController">
 
 	  <main-menu wanted="wanted"></main-menu>
-	  
+
 	  <collapse-box>
 		<post-input></post-input>
 	  </collapse-box>
-	  
-	  <go-up></go-up>
 
 
 	  <div class="container post-holder">
@@ -43,12 +49,12 @@
 		  <!-- back to main page -->
 		  <button class="btn btn-foo">back <span class="glyphicon glyphicon-arrow-left"></span></button>
 
-		  <!-- toggle topics list modal -->
+		  <!-- show topics list modal -->
 		  <button class="btn btn-foo-light"
 			data-toggle="modal"
-			data-target="#topics-list">topics <span class="glyphicon glyphicon-filter"></span></button>
+			data-target="#topics-list-1">topics <span class="glyphicon glyphicon-filter"></span></button>
 
-		  <!-- toggle tops list modal -->
+		  <!-- show tops list modal -->
 		  <button class="btn btn-danger"
 			data-toggle="popover"
 			data-content="here goes my content">tops <span class="glyphicon glyphicon-stats"></span></button>
@@ -58,12 +64,18 @@
 		<alert-lg id="mymodal">
 		  <post-input></post-input>
 		</alert-lg>
+		
+		<!--- filter modal -->
+		<alert-lg id="filter-modal" data-title="filter">
+		  filter (still not implemented)
+		</alert-lg>
+		<!-- /.filter modal -->
 
 		<!--- topics list modal -->
-		<alert-lg id="topics-list" data-title="topics">
+		<alert-lg id="topics-list-1" class="topics-list" data-title="topics">
 		  <ul ng-init="topics=['action', 'adventure', 'romance', 'comedy']">
 			<li ng-repeat="topic in topics">
-			  <input class="form-control" type="checkbox"/> <p>{{ topic }} #</p>
+			  <input class="form-control" type="checkbox"/> <p>{{ topic }} </p>
 			</li>
 		  </ul>
 		</alert-lg>
@@ -72,7 +84,9 @@
 		<!-- picture modal -->
 		<alert-lg id="pic-modal" data-title="pictures">
 		  <process>
-		    <pic-modal></pic-modal>
+		    <div ng-controller="picmodalController">
+			  <pic-modal myfile-obj="myfileObj"></pic-modal>
+		    </div>
 		  </process>
 		</alert-lg>
 		<!-- /.picture modal -->
@@ -91,7 +105,7 @@
 		  <p class="detail"><span ng-bind="post.friends"></span> friends</p>
 
 		  <div class="media-body">
-			<p ng-bind="post.body"></p>
+			<p><span ng-bind="post.body | limitTo: 100"></span>...</p>
 		  </div>
 		  <div class="media-footer">
 			<button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span><span ng-bind="post.views"></span></button>
@@ -107,7 +121,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/libs/jquery.min.js"></script>
-	<script src="js/libs/angular.js"></script>
+	<script src="js/libs/angular.min.js"></script>
+	<script src="js/libs/angular-animate.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>

@@ -1,10 +1,12 @@
 angular.module("myApp", [
+  "ngAnimate",
+//
   "myApp.controllers",
   "myApp.services",
   "myApp.directives" 
 ])
 // main configuration object
-.constant("config", {
+.constant("myApp.config", {
 	version: 1.0,
 	langs: ["eng-US", "port-BR"],
 	currentLang: "eng-us",
@@ -25,4 +27,10 @@ angular.module("myApp", [
 			types: []
 		}
 	}
+});
+
+$(document.body).ready(function() {
+	setTimeout(function() {
+	    $(".loading-page").css("display", "none");
+	}, 1000);
 });

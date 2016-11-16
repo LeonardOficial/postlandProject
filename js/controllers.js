@@ -18,7 +18,7 @@ angular.module("myApp.controllers", [])
 		  body: 
 			  "i wrote this post! i wrote this post!"
 			+ "i wrote this post! i wrote this post!"
-			+ "i wrote this post! ..."
+			+ "i wrote this post!"
 	  },
 	  {
 		  name: "zero",
@@ -32,7 +32,7 @@ angular.module("myApp.controllers", [])
 		  body: 
 			  "i wrote this post! i wrote this post!"
 			+ "i wrote this post! i wrote this post!"
-			+ "i wrote this post! ..."
+			+ "i wrote this post!"
 	  },
 	  {
 		  name: "zepto",
@@ -46,6 +46,11 @@ angular.module("myApp.controllers", [])
 		  body: 
 			  "i wrote this post! i wrote this post!"
 			+ "i wrote this post! i wrote this post!"
-			+ "i wrote this post! ..."
+			+ "i wrote this post!"
 	  });
-}]);
+}])
+
+.controller("picmodalController", function($scope, $timeout) {
+	$scope.myfileObj = "none";
+	
+});

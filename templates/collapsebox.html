@@ -1,7 +1,7 @@
-<div class="collapse-box">
-  <div class="content openMenu" ng-transclude></div>
+<div ng-init="display=false" class="collapse-box">
+  <div ng-show="display" class="content" ng-transclude></div>
   <div class="footer">
-	<button class="btn btn-default sw-btn">
+	<button ng-click="display=!display" class="btn btn-default">
 	  <span class="glyphicon glyphicon-fullscreen"></span>
 	</button>
   </div>

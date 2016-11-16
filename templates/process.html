@@ -1,10 +1,10 @@
 <div class="process">
-  <div class="progress">
-	<div class="progress-bar progress-bar-load"
+  <div ng-init="now=0" class="progress">
+	<div ng-style="{width: now + '%'}" class="progress-bar progress-bar-load"
 	  aria-valuenow="0"
 	  aria-valuemin="0"
 	  aria-valuemax="100">
-	  0%
+	  {{ now }}%
 	</div>
   </div>
   <div ng-transclude>
