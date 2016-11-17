@@ -4,8 +4,7 @@ angular.module("myApp.controllers", [])
 	$scope.post = function() {
 		alert("a");
 	};
-	$scope.posts = [];
-	$scope.posts.push(
+	$scope.posts = [
 	{
 		  name: "ryan",
 		  date: "12 november, 2016",
@@ -47,7 +46,7 @@ angular.module("myApp.controllers", [])
 			  "i wrote this post! i wrote this post!"
 			+ "i wrote this post! i wrote this post!"
 			+ "i wrote this post!"
-	  });
+	  }];
 }])
 
 .controller("picmodalController", function($scope, $timeout) {

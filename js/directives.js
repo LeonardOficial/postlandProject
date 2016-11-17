@@ -9,36 +9,10 @@ angular.module("myApp.directives", [])
 		replace: true
 	};
 })
-/*
-.directive("subMenu", function() {
-	return {
-		replace: true,
-	    restrict: "E",
-		templateUrl: "templates/submenu.html",
-		link: function(sc, element) {
-			var tagsList = element.find("li");	
-			var currentTag = $(tagsList[0]);
-			
-			for(var i=0; i<tagsList.length; i++) {
-				var li = $(tagsList[i]);
-				(function(x) {
-				    x.bind("click", function() {
-					    li.css("border-color", "blue");
-					    //
-					    currentTag = x;
-				    });
-				}(li));
-			}
-			
-		}
-	};
-})
-*/
 //
 .directive("collapseBox", function() {
 	return {
 		scope: { display: "@" },
-		restrict: "EA",
 		replace: true,
 		transclude: true,
 		templateUrl: "templates/collapsebox.html"

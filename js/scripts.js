@@ -8,7 +8,7 @@ angular.module("myApp", [
 // main configuration object
 .constant("myApp.config", {
 	version: 1.0,
-	langs: ["eng-US", "port-BR"],
+	langs: ["eng-US"],
 	currentLang: "eng-us",
 	//supported files
 	supported: {
