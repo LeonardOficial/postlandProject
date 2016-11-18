@@ -108,6 +108,7 @@ body {
 }
 .main-menu .search-holder {
   height: 35px;
+  margin-left: -2px;
   margin-top: 1px;
   position: absolute;
 }
@@ -121,7 +122,7 @@ body {
   width: 85%;
 }
 .main-menu .search-holder .input-group .btn {
-  border: 1px solid LightGray;
+  border-color: LightGray;
   height: 34px;
   line-height: 25px;
 }
@@ -362,75 +363,86 @@ body {
 .post-holder {
   padding-top: 93px;
 }
-.mypost {
-  background-color: #fff;
-  border: 2px solid #454545;
-  border-radius: 1px;
+
+.mypost-holder {
   margin-top: 10px;
 }
-.mypost.ng-hide-add {
-  animation: 1s fadeinup;
+.mypost {
+  background-color: #fff;
+  border: 1px solid #696969;
+  margin-top: 10px;
 }
-
-.mypost:nth-child(even) {
-  background-color: #eee;
+.mypost.ng-enter,
+.mypost.ng-leave {
+  transition: all linear .3s;
+}
+.mypost.ng-leave.ng-leave-active,
+.mypost.ng-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.mypost.ng-enter.ng-enter-active,
+.mypost.ng-leave {
+  transform: translateX(0);
+  opacity: 1;
 }
 .mypost > a .media-object {
-  background-color: White;
-  border: 1px solid #454545;
-  height: 80px;
-  margin: 3px 3px;
-  width: 80px;
+  border: 1px solid LightGray;
+  height: 90px;
+  width: 25%;
+}
+.mypost .media-heading,
+.mypost .topics li,
+.mypost .info {
+  background-color: #696969;
+  border: 1px solid LightGray;
+  color: #fff;
+  padding: 3px;
 }
 .mypost .media-heading {
-  color: #696969;
-  margin-top: 0px;
+  border-left: none;
+  margin-left: -1px;
+  float: left;
 }
-.mypost .detail {
-  color: #696969;
-  font-size: 15px;
-  margin: 0px;
+.mypost .info {
+  float: right;
+  margin-left: 1px;
 }
 .mypost .media-body {
-  padding: 10px;
-  padding-top: 5px;
+  padding: 3px;
+  padding-top: 0px;
+  padding-left: 5px;
+  width: 74.7%;
+}
+.mypost .topics {
+  float: left;
+  list-style-type: none;
+  margin-bottom: 6px;
+  padding: 0px;
   width: 100%;
 }
-.mypost .media-body img {
-  background-color: White;
-  border: 1px solid Black;
-  height: 200px;
-  width: 100%;
+.mypost .topics li {
+  background-color: #696969;
+  display: inline-block;
+  margin-left: 4px;
+  margin-top: 2px;
 }
 .mypost .media-footer {
-  height: 40px;
+  float: left;
   line-height: 30px;
   width: 100%;
 }
 .mypost .media-footer button {
-  background-color: #454545;
-  border: 1px solid Gray;
+  background-color: LightGray;
   border-radius: 0px;
-  color: #fff;
+  color: #454545;
   float: left;
   height: 35px;
-  margin-top: 7px;
   padding: 0px;
   width: 25%;
-}
-.mypost .media-footer button:hover {
-  background-color: #313131;
 }
 .mypost .media-footer button .glyphicon {
   margin-top: 5px;
   padding-right: 10px;
-  transform: scale(1.3);
-}
-.mypost .post-detail-holder {
-  color: #454545;
-  float: right;
-  line-height: 12px;
-  text-align: right;
-  width: 40%;
-  margin: -19px 3px;
+  transform: scale(1.2);
 }

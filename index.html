@@ -29,10 +29,10 @@
 	  <img src="css/imgs/icon-load-center.gif"/>
 	  <p>loading</p>
 	</div>
-	
-	
+
+	<!--
 	<go-up></go-up>
-	
+	-->
     <div ng-controller="postsController">
 
 	  <main-menu wanted="wanted"></main-menu>
@@ -63,9 +63,9 @@
 		<alert-lg id="mymodal">
 		  <post-input></post-input>
 		</alert-lg>
-		
+
 		<!--- filter modal -->
-		<alert-lg id="filter-modal" data-title="filter">
+		<alert-lg id="filter-modal" data-title="advanced filter">
 		  filter (still not implemented)
 		</alert-lg>
 		<!-- /.filter modal -->
@@ -90,27 +90,29 @@
 		</alert-lg>
 		<!-- /.picture modal -->
 
+		<div class="mypost-holder">
+		  <div ng-repeat="post in posts | filter: {name: wanted}" class="media mypost">
+			<a href="">
+			  <img ng-src="{{post.img}}" class="media-object pull-left"/>
+			  <h4 ng-bind="post.name" class="media-heading"></h4>
+			</a>
+			
+		    <span class="info" ng-bind="post.date"></span>
 
-		<div ng-repeat="post in posts | filter: {name: wanted}" class="media mypost">
-		  <a href="">
-			<img ng-src="{{post.img}}" class="media-object pull-left"/>
-			<h4 ng-bind="post.name" class="media-heading"></h4>
-		  </a>
-		  <div class="post-detail-holder">
-			<p ng-bind="post.date"></p>
-			<p ng-bind="post.topic"></p>
-		  </div>
-
-		  <p class="detail"><span ng-bind="post.friends"></span> friends</p>
-
-		  <div class="media-body">
-			<p><span ng-bind="post.body | limitTo: 100"></span>...</p>
-		  </div>
-		  <div class="media-footer">
-			<button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span><span ng-bind="post.views"></span></button>
-			<button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span><span ng-bind="post.likes"></span></button>
-			<button class="btn btn-default"><span class="glyphicon glyphicon-comment"></span><span ng-bind="post.comm"></span></button>
-			<button class="btn btn-default">...</button>
+			<div class="media-body">
+			  <p><span ng-bind="post.body | limitTo: 100"></span>...</p>
+			</div>
+			
+			<ul class="topics">
+			  <li ng-repeat="topic in post.topics">{{topic}}</li>
+			</ul>
+			
+			<div class="media-footer">
+			  <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span><span ng-bind="post.views"></span></button>
+			  <button class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span><span ng-bind="post.likes"></span></button>
+			  <button class="btn btn-default"><span class="glyphicon glyphicon-comment"></span><span ng-bind="post.comm"></span></button>
+			  <button class="btn btn-default">...</button>
+			</div>
 		  </div>
 		</div>
 	  </div>

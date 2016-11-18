@@ -6,9 +6,9 @@ angular.module("myApp.controllers", [])
 	};
 	$scope.posts = [
 	{
-		  name: "ryan",
-		  date: "12 november, 2016",
-		  topic: "adventure",
+		  name: "ryan florest",
+		  date: "1h",
+		  topics: ["adventure", "action"],
 		  friends: 22,
 		  views: 22,
 		  likes: 7,
@@ -20,9 +20,9 @@ angular.module("myApp.controllers", [])
 			+ "i wrote this post!"
 	  },
 	  {
-		  name: "zero",
-		  date: "12 november, 2016",
-		  topic: "adventure",
+		  name: "zero zephyrun",
+		  date: "1h 30m",
+		  topics: ["adventure", "comedy", "drama", "novel"],
 		  friends: 22,
 		  views: 22,
 		  likes: 7,
@@ -31,12 +31,12 @@ angular.module("myApp.controllers", [])
 		  body: 
 			  "i wrote this post! i wrote this post!"
 			+ "i wrote this post! i wrote this post!"
-			+ "i wrote this post!"
+			+ "i wrote this post! i wrote this post!"
 	  },
 	  {
-		  name: "zepto",
-		  date: "12 november, 2016",
-		  topic: "adventure",
+		  name: "zepto dark",
+		  date: "1h 45m",
+		  topics: ["adventure"],
 		  friends: 22,
 		  views: 22,
 		  likes: 7,
