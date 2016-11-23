@@ -1,6 +1,7 @@
+// myApp services Namespaces
+
 angular.module("myApp.services", [])
 //
-
 .factory("readAs", ["$q", function($q) {
 	return {
 		dataURL: function(file) {

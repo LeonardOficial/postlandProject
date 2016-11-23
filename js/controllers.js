@@ -1,9 +1,12 @@
+// myApp controllers Namespaces
+
 angular.module("myApp.controllers", [])
 //
-.controller("postsController", ["$scope", function($scope) {
+.controller("PostsController", ["$scope", function($scope) {
 	$scope.post = function() {
 		alert("a");
 	};
+	
 	$scope.posts = [
 	{
 		  name: "ryan florest",
@@ -48,8 +51,8 @@ angular.module("myApp.controllers", [])
 			+ "i wrote this post!"
 	  }];
 }])
-
-.controller("picmodalController", function($scope, $timeout) {
+//
+.controller("PicModalController", function($scope, $timeout) {
 	$scope.myfileObj = "none";
 	
 });

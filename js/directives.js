@@ -1,3 +1,5 @@
+// myApp directives Namespaces
+
 angular.module("myApp.directives", [])
 //
 .directive("mainMenu", function() {
@@ -5,15 +7,13 @@ angular.module("myApp.directives", [])
 		scope: { wanted: "=" },
 		//priority: 100,
 		templateUrl: "templates/mainmenu.html",
-		restrict: "E",
-		replace: true
+		restrict: "E"
 	};
 })
 //
 .directive("collapseBox", function() {
 	return {
 		scope: { display: "@" },
-		replace: true,
 		transclude: true,
 		templateUrl: "templates/collapsebox.html"
 	};
@@ -22,7 +22,6 @@ angular.module("myApp.directives", [])
 .directive("postInput", function() {
 	return {
 		restrict: "E",
-		replace: true,
 		templateUrl: function(el, attrs) {
 			return "templates/postinput.html";
 		}
@@ -34,7 +33,6 @@ angular.module("myApp.directives", [])
 	return {
 		scope: { myfileObj: "=" },
 		require: "?^process",
-		replace: true,
 		restrict: "E",
 		templateUrl: "templates/picmodal.html",
 		link: function(scope, el, attrs, ctrl) {
@@ -60,7 +58,6 @@ angular.module("myApp.directives", [])
 //
 .directive("goUp", function() {
 	return {
-		replace: true,
 		restrict: "E",
 		template: "<button class='go-up-btn'><span class='glyphicon glyphicon-forward'></span></button>",
 		link: function(sc, el) {
@@ -108,7 +105,6 @@ angular.module("myApp.directives", [])
 			this.error = function() {
 				$scope.now = 0;
 			};
-			
 		}
 	};
 });

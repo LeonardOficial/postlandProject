@@ -3,6 +3,15 @@ body {
   padding-bottom: 150px;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
 @keyframes fadeinup {
   from { opacity: 0; transform: translate3d(0, 0, 0); }
   to   { opacity: 1; transform: translate3d(0, -100%, 0); }
@@ -199,6 +208,30 @@ body {
   transform: rotate(-90deg);
 }
 
+.toast {
+  background-color: #696969;
+  border-radius: 20px;
+  color: White;
+  margin-left: 30%;
+  margin-top: 140%;
+  opacity: 0;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  transition: 5s;
+  width: 40%;
+}
+
+.toast-anima {
+  animation-duration: 5s;
+  animation-name: toast;
+}
+@keyframes toast {
+  from { opacity: 0; }
+  30%, 50%, 70%  { opacity: .9; }
+  to   { opacity: 0; }
+}
+
 .pl-alert {
   background-color: #454545;
   border: 1px solid #696969;
@@ -370,6 +403,7 @@ body {
 .mypost {
   background-color: #fff;
   border: 1px solid #696969;
+  border-radius: 4px;
   margin-top: 10px;
 }
 .mypost.ng-enter,
@@ -388,12 +422,12 @@ body {
 }
 .mypost > a .media-object {
   border: 1px solid LightGray;
-  height: 90px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  height: 85px;
   width: 25%;
 }
-.mypost .media-heading,
-.mypost .topics li,
-.mypost .info {
+.mypost .topics li {
   background-color: #696969;
   border: 1px solid LightGray;
   color: #fff;
@@ -401,12 +435,12 @@ body {
 }
 .mypost .media-heading {
   border-left: none;
-  margin-left: -1px;
+  margin: 4px;
   float: left;
 }
 .mypost .info {
   float: right;
-  margin-left: 1px;
+  margin-right: 2px;
 }
 .mypost .media-body {
   padding: 3px;
@@ -417,17 +451,21 @@ body {
 .mypost .topics {
   float: left;
   list-style-type: none;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  /*margin-top: -4px;*/
   padding: 0px;
   width: 100%;
 }
 .mypost .topics li {
-  background-color: #696969;
+  border: 1px solid #696969;
+  border-radius: 1px;
+  background-color: LightGray;
+  color: Black;
   display: inline-block;
   margin-left: 4px;
-  margin-top: 2px;
 }
 .mypost .media-footer {
+  border-top: 1px solid #696969;
   float: left;
   line-height: 30px;
   width: 100%;
@@ -440,6 +478,12 @@ body {
   height: 35px;
   padding: 0px;
   width: 25%;
+}
+.mypost .media-footer button:first-child {
+  border-bottom-left-radius: 4px;
+}
+.mypost .media-footer button:last-child {
+  border-bottom-right-radius: 4px;
 }
 .mypost .media-footer button .glyphicon {
   margin-top: 5px;

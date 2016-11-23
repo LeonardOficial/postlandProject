@@ -29,11 +29,14 @@
 	  <img src="css/imgs/icon-load-center.gif"/>
 	  <p>loading</p>
 	</div>
-
+	
 	<!--
 	<go-up></go-up>
 	-->
-    <div ng-controller="postsController">
+	
+	<toast id="toast"></toast>
+	
+    <div ng-controller="PostsController">
 
 	  <main-menu wanted="wanted"></main-menu>
 
@@ -72,10 +75,11 @@
 
 		<!--- topics list modal -->
 		<alert-lg id="topics-list-1" class="topics-list" data-title="topics">
-		  <ul ng-init="topics=['action', 'adventure', 'romance', 'comedy']">
-			<li ng-repeat="topic in topics">
-			  <input class="form-control" type="checkbox"/> <p>{{ topic }} </p>
-			</li>
+		  <ul>
+			<li><input class="form-control" type="checkbox"/> <p>action</p></li>
+			<li><input class="form-control" type="checkbox"/> <p>adventure</p></li>
+			<li><input class="form-control" type="checkbox"/> <p>romance</p></li>
+			<li><input class="form-control" type="checkbox"/> <p>comedy</p></li>
 		  </ul>
 		</alert-lg>
 		<!-- /.topics list modal -->
@@ -83,7 +87,8 @@
 		<!-- picture modal -->
 		<alert-lg id="pic-modal" data-title="pictures">
 		  <process>
-		    <div ng-controller="picmodalController">
+			
+		    <div ng-controller="PicModalController">
 			  <pic-modal myfile-obj="myfileObj"></pic-modal>
 		    </div>
 		  </process>
@@ -128,6 +133,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
+	<!-- app specific modules -->
 	<script src="js/controllers.js"></script>
 	<script src="js/services.js"></script>
 	<script src="js/directives.js"></script>
